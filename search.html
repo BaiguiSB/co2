@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>福大二手交易网</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <script type="text/javascript" src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+    <script type="text/javascript" src="js/head.js"></script>
+
+</head>
+
+<body onload="load_head()">
+    <div class="warp">
+        <div class="head" id="head_ctrl">
+            <a href="index.html"><img src="static/logo.jpg" class="fl" alt="logo"></a>
+            <div class="search fl">
+                <img src="static/search.jpg" alt="" class="fl">
+                <input type="text" class="keyword fl" name="keyword" autocomplete="off" disableautocomplete
+                    v-model="key" />
+                <input type="submit" class="btn fr" value="搜索" v-on:click="search()" />
+            </div>
+            <div class="user fr">
+                <img src="static/user.jpg" alt="" class="img fr" v-on:click="switch_head()">
+                <div class="menu" v-show="show_head">
+                    <div class="logined" v-show="is_login">
+                        <img class="head" v-bind:src="img_path">
+                        <p>{{username}}</p>
+                        <div class="function">
+                            <a href="user/index.html"></a>
+                            <a href="user/index.html" style="background-position: -60px;"></a>
+                            <a href="user/index.html" style="background-position: -120px;"></a>
+                            <a href="user/index.html" style="background-position: -180px;"></a>
+                        </div>
+                    </div>
+                    <div class="unlogin" v-show="!is_login && !login_or_reg">
+                        <div class="head"></div>
+                        <div class="input-box">
+                            <label>账号|</label>
+                            <input name="username" type="text" placeholder="请输入用户名" autocomplete="off"
+                                disableautocomplete v-model="in_username">
+                        </div>
+                        <div class="input-box">
+                            <label>密码|</label>
+                            <input name="password" type="password" placeholder="请输入密码" autocomplete="off"
+                                disableautocomplete v-model="in_password">
+                        </div>
+                        <input type="submit" class="left-bottom fl" value="登录" v-on:click="login">
+                        <input type="submit" class="right-bottom fr" value="注册" v-on:click="switch_login">
+                    </div>
+
+                    <div class="register" v-show="!is_login && login_or_reg">
+
+                        <p>用户注册</p>
+                        <div class="input-box">
+                            <label>账号|</label>
+                            <input name="username" type="text" placeholder="请输入用户名" autocomplete="off"
+                                disableautocomplete v-model="in_username">
+                        </div>
+                        <div class="input-box">
+                            <label>密码|</label>
+                            <input name="password" type="password" placeholder="请输入密码" autocomplete="off"
+                                disableautocomplete v-model="in_password">
+                        </div>
+                        <div class="input-box">
+                            <label>确认|</label>
+                            <input name="password" type="password" placeholder="请确认密码" autocomplete="off"
+                                disableautocomplete v-model="in_password2">
+                        </div>
+                        <input type="submit" class="left-bottom fl" value="登录" v-on:click="switch_login">
+                        <input type="submit" class="right-bottom fr" value="注册" v-on:click="register">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sorter" id="search_ctrl">
+            <ul>
+                <li class="active"><a>综合排序</a></li>
+                <li><a>价格从高到低</a></li>
+                <li><a>价格从低到高</a></li>
+                <li><a>发布从早到晚</a></li>
+                <li><a>发布从晚到早</a></li>
+            </ul>
+        </div>
+        <div class="h20-blank"></div>
+        <div class="search-result" id="search_ctrl">
+            <div class="commodity">
+                <div class="pic"></div>
+                <p class="price">￥30.00</p>
+                <p class="description">《野果》女生自用二手新真的很好看啊啊啊啊啊但是最近买衣服花太多钱了剁手出了书很新喜欢的集美们快来看看吧</p>
+            </div>
+            <div class="commodity">
+                <div class="pic"></div>
+                <p class="description"></p>
+                <p class="price"></p>
+            </div>
+            <div class="commodity">
+                <div class="pic"></div>
+                <p class="description"></p>
+                <p class="price"></p>
+            </div>
+            <div class="commodity">
+                <div class="pic"></div>
+                <p class="description"></p>
+                <p class="price"></p>
+            </div>
+            <div class="commodity">
+                <div class="pic"></div>
+                <p class="price">￥30.00</p>
+                <p class="description">《野果》女生自用二手新真的很好看啊啊啊啊啊但是最近买衣服花太多钱了剁手出了书很新喜欢的集美们快来看看吧</p>
+            </div>
+            <div class="commodity">
+                <div class="pic"></div>
+                <p class="price">￥30.00</p>
+                <p class="description">《野果》女生自用二手新真的很好看啊啊啊啊啊但是最近买衣服花太多钱了剁手出了书很新喜欢的集美们快来看看吧</p>
+            </div>
+            <div class="commodity">
+                <div class="pic"></div>
+                <p class="price">￥30.00</p>
+                <p class="description">《野果》女生自用二手新真的很好看啊啊啊啊啊但是最近买衣服花太多钱了剁手出了书很新喜欢的集美们快来看看吧</p>
+            </div>
+            <div class="commodity">
+                <div class="pic"></div>
+                <p class="price">￥30.00</p>
+                <p class="description">《野果》女生自用二手新真的很好看啊啊啊啊啊但是最近买衣服花太多钱了剁手出了书很新喜欢的集美们快来看看吧</p>
+            </div>
+        </div>
+        <div class="h20-blank"></div>
+
+        <div class="pagebox" id="search_ctrl">
+            <div class="pagenumber pagebar">
+                <input type="button" class="scrollpage rank_d_page_submit" style="width: 55px;" value="上一页">
+                <input type="button" class="scrollpage rank_d_page_submit" value="1">
+                <input type="button" class="scrollpage rank_d_page_submit" value="2">
+                <input type="button" class="scrollpage rank_d_page_submit" value="3">
+                <input type="button" class="scrollpage rank_d_page_submit" value="4">
+                ...
+                <input type="button" class="scrollpage rank_d_page_submit" value="50">
+                <input type="button" class="scrollpage rank_d_page_submit" style="width: 55px;" value="下一页">
+                <div style="width: 10px;display: inline-block;"></div>
+                跳转到：
+                <input type="text" class="text scrollpage rank_d_page_value">/1页
+                <input type="button" class="scrollpage rank_d_page_submit" value="跳转">
+            </div>
+        </div>
+        <div class="h20-blank"></div>
+        <div class="foot">
+            <p>西二在线合作轮考核</p>
+        </div>
+    </div>
+</body>
+
+</html>

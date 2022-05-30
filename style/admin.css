@@ -1,0 +1,276 @@
+body {
+    margin: 8px;
+}
+
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+    word-wrap: break-word;
+}
+
+.wrap a {
+    text-decoration: none;
+    color: black;
+}
+
+.pass_header {
+    padding: 30px 0 10px;
+    position: relative;
+    background-color: white;
+    height: 102px;
+}
+
+.pass_logo {
+    float: left;
+}
+
+.pass_link {
+    float: right;
+    margin: 38px 20px auto auto;
+    color: #526584;
+    display: inline;
+    padding: 0 5px;
+    line-height: 22px;
+    font-family: Tahoma;
+}
+
+.pass_link a {
+    color: #fff;
+    background: #526584;
+    display: inline-block;
+    padding: 0 15px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+
+.passbg {
+    background: #f1f2f3;
+    padding: 28px 0;
+}
+
+.login-box {
+    position: relative;
+    padding-bottom: 20px;
+    background: #fff;
+    width: 350px;
+    padding: 25px;
+    margin: auto;
+}
+
+.login-box .forget {
+    font-size: 12px;
+    color: #777;
+    line-height: 20px;
+    padding-bottom: 8px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.login-box .welcome {
+    font-weight: 700;
+    line-height: 50px;
+    text-align: center;
+}
+
+.login-text {
+    font-size: 14px;
+    color: #777;
+    line-height: 38px;
+    height: 38px;
+    padding: 0 10px 0 40px;
+    width: 300px;
+}
+
+.btn-submit {
+    border: none;
+    font-size: 18px;
+    line-height: 50px;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    background-color: #a5232e;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+}
+
+.sidebar {
+    width: 300px;
+    height: 100%;
+    background-color: rgb(213, 225, 213);
+    top: 0px;
+    position: absolute;
+    z-index: 0;
+}
+
+.sidebar .title {
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    font-size: 30px;
+    margin: 0;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-weight: 600;
+}
+
+.sidebar .sub-ctrl {
+    width: 100%;
+    height: 60px;
+}
+
+.sidebar .sub-ctrl p {
+    line-height: 60px;
+    text-align: center;
+    color: rgb(112, 114, 112);
+    font-size: 24px;
+    margin: 0;
+}
+
+.iframe-box {
+    height: 100%;
+    width: 100%;
+    padding: 80px 0 0 300px;
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+}
+
+.iframe-box iframe {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0;
+}
+
+.function-title {
+    height: 75px;
+    line-height: 75px;
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(63, 66, 59);
+    margin: 20px 45px;
+}
+
+.exame-user {
+    width: 1500px;
+    height: 500px;
+    margin: 10px auto;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.exame-user .img-and-price {
+    box-sizing: border-box;
+    width: 320px;
+    height: auto;
+    margin: 20px;
+    float: left;
+}
+
+.exame-user .img-and-price img {
+    width: 320px;
+    height: 320px;
+}
+
+.exame-user .img-and-price .pirce {
+    font-size: 38px;
+    color: rgb(215, 83, 96);
+    line-height: 42px;
+    height: 42px;
+    width: 100%;
+    text-align: center;
+}
+
+.exame-user .info {
+    width: 1080px;
+    height: 100px;
+    float: left;
+    margin: 20px;
+}
+
+.exame-user .info .info-name {
+    width: 100%;
+    display: inline-block;
+    font-size: 32px;
+    line-height: 48px;
+    height: 48px;
+    color: rgb(43, 43, 41);
+    margin-bottom: 20px;
+    overflow: hidden;
+    word-wrap: normal;
+}
+
+.exame-user .info .info-name .title {
+    color: rgb(99, 102, 95);
+
+}
+
+.exame-user .info img {
+    width: 100px;
+    height: 100px;
+    margin: 0 30px;
+}
+
+.exame-user .info .buttons button {
+    width: 200px;
+    height: 80px;
+    background-color: rgb(213, 225, 213);
+    color: rgb(166, 178, 140);
+    font-size: 32px;
+    border: none;
+    margin: 20px;
+}
+
+.goods-list{
+    width: 1150px;
+    height: 180px;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+
+.goods-list button{
+    height: 150px;
+    width: 50px;
+    font-size: 40px;
+    border: 0px;
+    background-color: white;
+    float: left;
+}
+
+.goods-list button:hover{
+    background-color: rgb(213,225,213);
+}
+
+.goods-list img{
+    width: 150px;
+    height: 150px;
+    margin: 0 30px;
+    float: left;
+}
+
+.exame-user .head-and-name {
+    box-sizing: border-box;
+    width: 320px;
+    height: auto;
+    margin: 20px;
+    float: left;
+}
+
+.exame-user .head-and-name img {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.exame-user .head-and-name .name {
+    font-size: 38px;
+    color: rgb(215, 83, 96);
+    line-height: 42px;
+    height: 42px;
+    width: 100%;
+    text-align: center;
+}
